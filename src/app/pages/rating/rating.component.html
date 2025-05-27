@@ -1,0 +1,102 @@
+<div class="testemich">
+    <div class="testemich2">
+        <div class="infobox">
+            <div class="infobox-wrapper">
+                <div class="dozenteninfo">
+                    <h3>Choose your Character:</h3>
+                    <div #infobox class="dozentenauswahl" [class.ausgewaehlt]="dozWahlgetaetigt">
+                        @if (ausgewaehlterDozent) {
+                        <div class="dozpick dozentenWahl">
+                            <p>{{ ausgewaehlterDozent.name}}</p>
+                            <img src="assets/images/profil/{{ ausgewaehlterDozent.avatar }}"
+                                alt="{{ ausgewaehlterDozent.name }}">
+                            <span>{{ ausgewaehlterDozent.description }}</span>
+                            <div class="button-list">
+                                <button (click)="clickRating()" class="show-rating-form">Bewertung
+                                    abgeben!</button>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Dozenten Liste
+                    </button>
+                </h2>
+                <div #collapse id="collapseOne" class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="dozenten">
+                            <div class="doz-list">
+                                @for (doz of dozent; track doz.id; let i = $index){
+                                <div class="doz-pic" (click)="dozClick(i)">
+                                    <p>{{ doz.name }}</p>
+                                    <img src="assets/images/profil/{{ doz.avatar }}" alt="{{ doz.name }}">
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if(toggleForm) {
+    <div class="rating-form">
+        <form [formGroup]="ratingForm" (ngSubmit)="submit()">
+            <h1>Bitte geben sie hier ihre Bewertung ab!</h1>
+            <div class="input-group">
+
+                <label for="name">Name: </label>
+                <input id="name" formControlName="name" placeholder="Name">
+                <label>E-Mail: </label>
+                <input type="email" formControlName="mail" placeholder="E-Mail">
+
+            </div>
+            <div class="input-group">
+
+                <label>Dozent: </label>
+                <input formControlName="dozent" placeholder="Dozent" readonly>
+                <label>Fach: </label>
+                <input formControlName="fach" placeholder="Fach">
+
+            </div>
+            <div class="starcomm">
+                <div class="input-group stars">
+
+                    <label>Bewertung: </label>
+                    <div class="rating">
+                        <input formControlName="sterne" value="5" name="sterne" id="star5" type="radio">
+                        <label for="star5"></label>
+                        <input formControlName="sterne" value="4" name="sterne" id="star4" type="radio">
+                        <label for="star4"></label>
+                        <input formControlName="sterne" value="3" name="sterne" id="star3" type="radio">
+                        <label for="star3"></label>
+                        <input formControlName="sterne" value="2" name="sterne" id="star2" type="radio">
+                        <label for="star2"></label>
+                        <input formControlName="sterne" value="1" name="sterne" id="star1" type="radio">
+                        <label for="star1"></label>
+                    </div>
+                </div>
+                <div class="input-group comment">
+
+                    <label>Kommentar: </label>
+                    <textarea id="kommentar" formControlName="kommentar" placeholder="Kommentar"
+                        [attr.maxlength]="maxLength">
+                        </textarea>
+                    <label class="counter">Maximale Zeichenlänge: {{ charCount }} | {{ maxLength }}</label>
+                </div>
+            </div>
+            <div class="buttons-group">
+                <button class="absenden-button" type="submit">Absenden</button>
+                <button class="abbrechen-button" (click)="onClickCancel()" type="button">Abbrechen</button>
+            </div>
+        </form>
+    </div>
+    }

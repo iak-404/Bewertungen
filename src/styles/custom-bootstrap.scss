@@ -1,0 +1,9 @@
+@use "bootstrap/scss/bootstrap" with (
+  $accordion-bg: #00356388,
+  $accordion-button-color: #ffa4f5,
+  $accordion-button-bg: #00356388,
+  $accordion-button-active-color: #ffa4f5,
+  $accordion-button-active-bg: #00356388,
+  $accordion-icon-color: #91e1fe,
+  $accordion-icon-active-color: #91e1fe
+);

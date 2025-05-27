@@ -1,0 +1,79 @@
+$maxWidth: 680px;
+
+.alle-abteilungen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.abteilung {
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  width: 90%;
+  border: 3px solid cyan;
+  border-radius: 2rem;
+  background-color: #00356388;
+
+  @media (max-width: $maxWidth) {
+    width: 80%;
+  }
+
+  .ueberschrift {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #fb94f1;
+    text-shadow: 0 0 5px black;
+    margin-top: 0.5rem;
+  }
+
+  .inner-abteilung {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+
+    @media (max-width: $maxWidth) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    p {
+      color: cyan;
+      text-shadow: 0 0 2px black;
+      margin: 0;
+    }
+
+    .inner-karriere {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inner-img {
+      height: 200px;
+      width: 200px;
+      margin: 1rem;
+      margin-left: 10%;
+      outline: 2px solid black;
+      box-shadow: 0 0 10px whitesmoke;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .jobanzeigen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.75rem;
+  }
+}

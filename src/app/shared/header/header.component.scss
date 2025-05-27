@@ -1,0 +1,62 @@
+$maxWidth: 680px;
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  background: #025ca9;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+
+  @media (max-width: $maxWidth) {
+    width: 85%;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center; /* Vertikal zentrieren */
+    justify-content: center; /* Horizontal zentrieren */
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    width: 100%;
+    height: 100%;
+    color: #91e1fe;
+    text-shadow: 0 2px 5px #fb9af0;
+
+    p {
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: $maxWidth) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+
+  @media (max-width: $maxWidth) {
+    width: 15%;
+  }
+}

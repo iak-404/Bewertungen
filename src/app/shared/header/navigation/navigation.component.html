@@ -1,0 +1,52 @@
+<nav>
+    <div class="navigation">
+        <ul>
+            <li>
+                <a class="nav-button" routerLink="/" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    Home</a>
+            </li>
+            <li>
+                <a class="nav-button" routerLink="/rating" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    Rating</a>
+            </li>
+            <li>
+                <a class="nav-button" routerLink="/contact" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    Contact</a>
+            </li>
+            <li class="dontClick">
+                <a class="nav-button" routerLink="/surprise" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    <span>Don't Click here!</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="nav-responsiv">
+        <img #imgNav (click)="toggleMenu()" [src]="isOpen ? openMenu : closeMenu" alt="Hamburger Menu"
+            [class.openMenu]="isOpen">
+        <div #resNav class="resOverlay">
+            <ul class="button-list">
+                <li>
+                    <a class="nav-button" routerLink="/" routerLinkActive="active" (click)="closeNav()">
+                        Home</a>
+                </li>
+                <li>
+                    <a class="nav-button" routerLink="/rating" routerLinkActive="active" (click)="closeNav()">
+                        Rating</a>
+                </li>
+                <li>
+                    <a class="nav-button" routerLink="/contact" routerLinkActive="active" (click)="closeNav()">
+                        Contact</a>
+                </li>
+                <li>
+                    <a class="nav-button dontClick" routerLink="/surprise" routerLinkActive="active"
+                        (click)="closeNav()">
+                        Don't Click here!</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

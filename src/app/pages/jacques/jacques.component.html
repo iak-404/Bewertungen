@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <h1>Wir sagten doch, nicht klicken!</h1>
+    <img src="assets/images/really.png">
+    <div class="rating-data">
+        <p>Nun musst du dir das hier antun.<br>Hier siehst du eine Abfrage mit den letzten 10 Bewertungen!</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Dozent</th>
+                <th>Fach</th>
+                <th>Sterne</th>
+                <th>Kommentar</th>
+            </tr>
+            @for (rat of rating; track rat.id; ) {
+            <tr>
+                <td>{{ rat.name }}</td>
+                <td>{{ rat.dozent }}</td>
+                <td>{{ rat.fach }}</td>
+                <td>{{ rat.sterne }}</td>
+                <td class="comment">{{ rat.kommentar }}</td>
+            </tr>
+            }
+        </table>
+    </div>
+    <div class="warning">
+        <a href="https://starwarsintrogenerator.com/scroller?u=ylewank8" target="_blank">
+            Hier diesmal wirklich NICHT! Klicken
+        </a>
+    </div>
+</div>

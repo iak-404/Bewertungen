@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 100vw;
+  /* Stellt sicher, dass die Seite mindestens die Höhe des Viewports hat */
+}
+
+html,
+body {
+  height: 100%;
+  background-image: url(assets/images/background1.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  color: lime;
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: auto;
+}

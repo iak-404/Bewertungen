@@ -1,0 +1,101 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+
+  h1 {
+    margin-top: 2rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, blue, pink, red, yellow, green);
+    background-clip: text;
+  }
+
+  .rating-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    background-color: darkgray;
+    padding: 2rem;
+    border: 1rem ridge silver;
+
+    p {
+      text-align: center;
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      outline: 0.2rem solid rgb(3, 156, 156);
+      background-color: rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0 0 0.5rem white, 0.2rem 0.2rem 0.8rem rgb(77, 76, 76);
+    }
+
+    table,
+    th,
+    td {
+      color: aqua;
+      text-align: center;
+      border-collapse: separate;
+    }
+
+    table {
+      width: 100%;
+      font-size: 1rem;
+      border-spacing: 0;
+      border: 2px solid magenta;
+      border-radius: 2rem 2rem 0rem 0rem;
+      background-color: rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0 0 0.5rem white, 0.2rem 0.2rem 0.8rem rgb(77, 76, 76);
+    }
+
+    th {
+      padding: 0.5rem 0rem;
+      border-bottom: 2px solid magenta;
+    }
+
+    td {
+      width: fit-content;
+      padding: 0.5rem 0.5rem;
+      border-left: 1px solid magenta;
+      border-bottom: 1px solid magenta;
+    }
+
+    .comment {
+      width: 60%;
+    }
+  }
+
+  img {
+    width: 35%;
+    border-radius: 2rem;
+    outline: 0.2rem solid rgb(0, 68, 68);
+    box-shadow: 0 0 1rem whitesmoke;
+  }
+  .warning {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    background-color: red;
+    border-radius: 2rem;
+    outline: 0.25rem solid green;
+    box-shadow: inset -0.2rem -0.2rem 0.5rem black,
+      inset 0.2rem 0.2rem 0.5rem white;
+
+    &:active {
+      box-shadow: inset -0.2rem -0.2rem 0.5rem white,
+        inset 0.2rem 0.2rem 0.5rem black;
+    }
+
+    a {
+      color: salmon;
+      text-shadow: 0 0 9px black, 0 0 9px black, 0 0 9px black, 0 0 9px black;
+      font-size: 4rem;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.2rem 1rem;
+    }
+  }
+}

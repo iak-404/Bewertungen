@@ -1,0 +1,48 @@
+<div class="homecontainer">
+    <div class="top-wrapper">
+        <div class="innerleft">
+            <div class="speechbubble" [class.unfolded]="isActive">
+                <p class="bubbletext" (click)="changeBoolean($event)">
+                    Worum geht's?
+                </p>
+                <p class="paraabout" [class.unfolded]="isActive">
+                    Hier kann man Bewertungen zu den Dozenten der IBB abgeben.
+                </p>
+            </div>
+        </div>
+        <div class="innerright">
+            <h3>Dozent of the Century</h3>
+            <img src="assets/images/profil/Jacqui.png" alt="Jacqui kommt dich holen">
+        </div>
+    </div>
+
+    <div class="bot-wrapper">
+        <div class="rankingüberschrift">
+            <p>↓<span class="noarrow">Ranking</span>↓</p>
+        </div>
+        <div class="rankingcontainer">
+            <div class="platzierungsbox" [ngClass]="'platzierung-' + sieger[0].platz">
+                <span class="place s-place-3">{{ sieger[0].platz }}</span>
+                <img class="platzierungsimg" src="assets/images/profil/{{ sieger[0].name }}.png"
+                    alt="{{ sieger[1].name }}">
+                <span class="average">{{ sieger[0].bewertung }}</span>
+
+            </div>
+
+            <div class="platzierungsbox" [ngClass]="'platzierung-' + sieger[1].platz">
+                <span class="place s-place-1">{{ sieger[1].platz }}</span>
+                <img class="platzierungsimg" src="assets/images/profil/{{ sieger[1].name }}.png"
+                    alt="{{ sieger[0].name }}">
+                <span class="average">{{ sieger[1].bewertung }}</span>
+
+            </div>
+
+            <div class="platzierungsbox" [ngClass]="'platzierung-' + sieger[2].platz">
+                <span class="place s-place-2">{{ sieger[2].platz }}</span>
+                <img class="platzierungsimg" src="assets/images/profil/{{ sieger[2].name}}.png"
+                    alt="{{ sieger[2].name }}">
+                <span class="average">{{ sieger[2].bewertung }}</span>
+            </div>
+        </div>
+    </div>
+</div>
